@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_margin="@dimen/activity_horizontal_margin"
+    android:layout_height="wrap_content">
+
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cv"
+        >
+                    <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/protitle"
+                android:text="date"
+                android:textSize="16sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/amount"
+
+                        app:layout_constraintRight_toLeftOf="@+id/amount"
+                app:layout_constraintLeft_toLeftOf="parent"
+                />
+            <Button
+                android:layout_width="wrap_content"
+                android:text="BUY"
+                android:id="@+id/buy"
+                android:layout_height="wrap_content"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/amount"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/amount"
+                android:text="50"
+                android:layout_marginTop="13sp"
+                app:layout_constraintRight_toRightOf="parent"
+                android:textSize="18sp"
+                />
+            <TextView
+                android:layout_width="0dp"
+                android:id="@+id/delivery"
+                tools:text="Availability"
+
+                android:textSize="12sp"
+                app:layout_constraintTop_toBottomOf="@+id/protitle"
+                app:layout_constraintRight_toLeftOf="@+id/buy"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_height="wrap_content" />
+    </android.support.constraint.ConstraintLayout>
+
+
+
+</android.support.v7.widget.CardView>
