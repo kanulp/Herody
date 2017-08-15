@@ -8,14 +8,8 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
-import com.kanu_lp.support.Home_Fragment;
-import com.kanu_lp.support.Profile_Fragment;
-import com.kanu_lp.support.Settings_Fragment;
-import com.kanu_lp.support.R;
 
 public class MainActivity extends AppCompatActivity {
-
-
 
     private Fragment fragment;
     private FragmentManager fragmentManager;
@@ -40,22 +34,14 @@ public class MainActivity extends AppCompatActivity {
                     public boolean onNavigationItemSelected(MenuItem item) {
                         switch (item.getItemId()) {
                             case com.kanu_lp.support.R.id.navigation_home:
-                                fragment = new Home_Fragment();
+                                    fragment = new com.kanu_lp.support.Home_Fragment();
                                 break;
-                            case R.id.navigation_dashboard:
-                                fragment = new Profile_Fragment();
-                                break;
-                            case R.id.navigation_notifications:
-                                fragment = new Settings_Fragment();
-                                break;
+
                         }
                         final FragmentTransaction transaction = fragmentManager.beginTransaction();
                         transaction.replace(R.id.main_container, fragment).commit();
                         return true;
                     }
                 });
-
-
     }
-
 }

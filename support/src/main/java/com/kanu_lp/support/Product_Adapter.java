@@ -28,7 +28,7 @@ public class Product_Adapter extends RecyclerView.Adapter<Product_Adapter.ViewHo
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.constraint_layout_demo, viewGroup, false);
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.product_item, viewGroup, false);
         return new ViewHolder(view);
     }
 
@@ -48,8 +48,9 @@ public class Product_Adapter extends RecyclerView.Adapter<Product_Adapter.ViewHo
 
                 Uri webpage = Uri.parse(item.getProduct_url());
                 Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
+                Intent chooser = Intent.createChooser(intent, "Choose Your Browser");
                 if (intent.resolveActivity(context.getPackageManager()) != null) {
-                    context.startActivity(intent);
+                    context.startActivity(chooser);
                 }
 
             }
